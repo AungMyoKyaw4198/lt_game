@@ -1,0 +1,1 @@
+enum QuizeType { multipleSelect, singleSelect }
