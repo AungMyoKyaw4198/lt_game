@@ -104,7 +104,7 @@ List<Question> questions = [
       answers: [
         'Sharable Content Object Reference Model',
         'Super Cool Online Resource Machine',
-        'Standard Coding Operation Review Monitoringe',
+        'Standard Coding Operation Review Monitoring',
         'Sufficient Category Official Relay Management'
       ],
       correctAnswer: 'Sharable Content Object Reference Model',
@@ -141,5 +141,5 @@ List<Question> questions = [
       correctAnwerExpHighlight:
           'know the challenges of scaling multilingual training initiatives.',
       correctAnwerExp2:
-          '''\nOur industry-specific linguists, advanced language technology, project management expertise and deeper audience understanding with ULGEngage are key components to your success.'''),
+          '''\n\nOur industry-specific linguists, advanced language technology, project management expertise and deeper audience understanding with ULGEngage are key components to your success.'''),
 ];

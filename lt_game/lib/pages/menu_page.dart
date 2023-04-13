@@ -40,14 +40,14 @@ class _MenuPageState extends State<MenuPage> {
                       children: [
                         Image.asset(
                           'assets/images/logo.png',
-                          width: scrSize.width / 8,
-                          height: scrSize.width / 8,
+                          width: scrSize.width / 6,
+                          height: scrSize.width / 6,
                           fit: BoxFit.contain,
                         ),
                         Text(
                           'ULG',
                           style: TextStyle(
-                              fontSize: scrSize.width / 15,
+                              fontSize: scrSize.width / 10,
                               color: Colors.white,
                               fontWeight: FontWeight.bold),
                         ),
@@ -61,7 +61,7 @@ class _MenuPageState extends State<MenuPage> {
                     Text(
                       'Localization',
                       style: TextStyle(
-                          fontSize: scrSize.width / 15,
+                          fontSize: scrSize.width / 8,
                           fontFamily: 'EdsMarketMainScript',
                           color: const Color(ulgFlameOrange)),
                     ),
@@ -71,26 +71,26 @@ class _MenuPageState extends State<MenuPage> {
                     Text(
                       'Quiz',
                       style: TextStyle(
-                          fontSize: scrSize.width / 25,
+                          fontSize: scrSize.width / 15,
                           color: Colors.white,
-                          fontWeight: FontWeight.w500),
+                          fontWeight: FontWeight.bold),
                     ),
                     Text(
                       'Questionário',
                       style: TextStyle(
-                          fontSize: scrSize.width / 25,
+                          fontSize: scrSize.width / 15,
                           fontFamily: 'NotoSans',
                           color: Colors.white),
                     ),
                     Text('Concurso',
                         style: TextStyle(
-                            fontSize: scrSize.width / 25,
+                            fontSize: scrSize.width / 15,
                             fontFamily: 'NotoSans',
                             color: Colors.white)),
                     Text(
-                      'Sporrekonkurranse',
+                      'Spørrekonkurranse',
                       style: TextStyle(
-                          fontSize: scrSize.width / 25,
+                          fontSize: scrSize.width / 15,
                           fontFamily: 'NotoSans',
                           color: Colors.white),
                     ),
@@ -111,7 +111,7 @@ class _MenuPageState extends State<MenuPage> {
                 },
               ),
               SizedBox(
-                height: scrSize.height / 13,
+                height: scrSize.height / 5,
               ),
             ],
           ),

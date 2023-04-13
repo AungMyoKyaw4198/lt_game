@@ -16,6 +16,7 @@ class QuizPage extends StatefulWidget {
 
 class _QuizPageState extends State<QuizPage> {
   bool userSelected = false;
+  String userSelectedAns = '';
 
   @override
   Widget build(BuildContext context) {
@@ -34,14 +35,14 @@ class _QuizPageState extends State<QuizPage> {
                     children: [
                       Image.asset(
                         'assets/images/logo.png',
-                        width: scrSize.width / 10,
-                        height: scrSize.width / 10,
+                        width: scrSize.width / 6,
+                        height: scrSize.width / 6,
                         fit: BoxFit.contain,
                       ),
                       Text(
                         'ULG',
                         style: TextStyle(
-                            fontSize: scrSize.width / 20,
+                            fontSize: scrSize.width / 10,
                             color: const Color(ulgDarkBlue),
                             fontWeight: FontWeight.bold),
                       ),
@@ -59,7 +60,7 @@ class _QuizPageState extends State<QuizPage> {
                       Text(
                         'Question ${widget.question.questionNumber}',
                         style: TextStyle(
-                            fontSize: scrSize.width / 30,
+                            fontSize: scrSize.width / 23,
                             fontWeight: FontWeight.bold,
                             color: const Color(ulgDarkBlue)),
                       ),
@@ -69,7 +70,7 @@ class _QuizPageState extends State<QuizPage> {
                       Text(
                         widget.question.question,
                         style: TextStyle(
-                            fontSize: scrSize.width / 40,
+                            fontSize: scrSize.width / 25,
                             color: Colors.black54,
                             fontWeight: FontWeight.w300),
                       ),
@@ -83,41 +84,18 @@ class _QuizPageState extends State<QuizPage> {
                             onTap: () {
                               setState(() {
                                 userSelected = true;
+                                userSelectedAns =
+                                    widget.question.answers[index];
                               });
-                              if (widget.question.answers[index] ==
-                                  widget.question.correctAnswer) {
-                                Future.delayed(const Duration(seconds: 1), () {
-                                  Navigator.pushReplacement(
-                                    context,
-                                    MaterialPageRoute<void>(
-                                      builder: (BuildContext context) =>
-                                          AnswerPage(question: widget.question),
-                                    ),
-                                  );
-                                });
-                              } else {
-                                Future.delayed(const Duration(seconds: 1), () {
-                                  if (widget.question.questionNumber == 10) {
-                                    Navigator.pushReplacement(
-                                      context,
-                                      MaterialPageRoute<void>(
-                                        builder: (BuildContext context) =>
-                                            const Endpage(),
-                                      ),
-                                    );
-                                  } else {
-                                    Navigator.pushReplacement(
-                                      context,
-                                      MaterialPageRoute<void>(
-                                        builder: (BuildContext context) =>
-                                            QuizPage(
-                                                question: questions[widget
-                                                    .question.questionNumber]),
-                                      ),
-                                    );
-                                  }
-                                });
-                              }
+                              Future.delayed(const Duration(seconds: 1), () {
+                                Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute<void>(
+                                    builder: (BuildContext context) =>
+                                        AnswerPage(question: widget.question),
+                                  ),
+                                );
+                              });
                             },
                             child: userSelected
                                 ? Container(
@@ -128,9 +106,9 @@ class _QuizPageState extends State<QuizPage> {
                                         horizontal: 10),
                                     decoration: BoxDecoration(
                                       color: widget.question.answers[index] ==
-                                              widget.question.correctAnswer
-                                          ? const Color(ulgGreen)
-                                          : Colors.red,
+                                              userSelectedAns
+                                          ? const Color(ulgDarkBlue)
+                                          : const Color(ulgFlameOrange),
                                     ),
                                     child: Center(
                                       child: FittedBox(

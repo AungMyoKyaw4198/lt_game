@@ -39,14 +39,14 @@ class _EndpageState extends State<Endpage> {
                       children: [
                         Image.asset(
                           'assets/images/logo.png',
-                          width: scrSize.width / 8,
-                          height: scrSize.width / 8,
+                          width: scrSize.width / 6,
+                          height: scrSize.width / 6,
                           fit: BoxFit.contain,
                         ),
                         Text(
                           'ULG',
                           style: TextStyle(
-                              fontSize: scrSize.width / 15,
+                              fontSize: scrSize.width / 10,
                               color: Colors.white,
                               fontWeight: FontWeight.bold),
                         ),
@@ -60,7 +60,7 @@ class _EndpageState extends State<Endpage> {
                     Text(
                       'Congratulations',
                       style: TextStyle(
-                          fontSize: scrSize.width / 15,
+                          fontSize: scrSize.width / 8,
                           fontFamily: 'EdsMarketMainScript',
                           color: const Color(ulgFlameOrange)),
                     ),
@@ -68,13 +68,13 @@ class _EndpageState extends State<Endpage> {
                       height: 20,
                     ),
                     SizedBox(
-                      width: scrSize.width / 2,
+                      width: scrSize.width / 1.5,
                       child: Center(
                         child: Text(
-                          "You're an Learning Localization Champ!",
+                          "You're an eLearning Localization Champ!",
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                              fontSize: scrSize.width / 25,
+                              fontSize: scrSize.width / 15,
                               color: Colors.white,
                               fontWeight: FontWeight.bold),
                         ),
@@ -96,7 +96,7 @@ class _EndpageState extends State<Endpage> {
                 },
               ),
               SizedBox(
-                height: scrSize.height / 13,
+                height: scrSize.height / 5,
               ),
             ],
           ),

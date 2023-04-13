@@ -32,14 +32,14 @@ class _AnswerPageState extends State<AnswerPage> {
                     children: [
                       Image.asset(
                         'assets/images/logo.png',
-                        width: scrSize.width / 10,
-                        height: scrSize.width / 10,
+                        width: scrSize.width / 6,
+                        height: scrSize.width / 6,
                         fit: BoxFit.contain,
                       ),
                       Text(
                         'ULG',
                         style: TextStyle(
-                            fontSize: scrSize.width / 20,
+                            fontSize: scrSize.width / 10,
                             color: const Color(ulgDarkBlue),
                             fontWeight: FontWeight.bold),
                       ),
@@ -60,7 +60,7 @@ class _AnswerPageState extends State<AnswerPage> {
                       Text(
                         'Correct Answer',
                         style: TextStyle(
-                            fontSize: scrSize.width / 30,
+                            fontSize: scrSize.width / 20,
                             fontWeight: FontWeight.bold,
                             color: const Color(ulgDarkBlue)),
                       ),
@@ -90,37 +90,43 @@ class _AnswerPageState extends State<AnswerPage> {
                       const SizedBox(
                         height: 20,
                       ),
-                      RichText(
-                        text: TextSpan(children: [
-                          TextSpan(
-                            text: widget.question.correctAnwerExp,
-                            style: TextStyle(
-                                fontSize: scrSize.width / 50,
-                                color: const Color(ulgGery1),
-                                fontWeight: FontWeight.w300),
+                      Expanded(
+                        child: SingleChildScrollView(
+                          child: RichText(
+                            text: TextSpan(children: [
+                              TextSpan(
+                                text: widget.question.correctAnwerExp,
+                                style: TextStyle(
+                                    fontSize: scrSize.width / 23,
+                                    color: const Color(ulgGery1),
+                                    fontWeight: FontWeight.w300),
+                              ),
+                              TextSpan(
+                                text: widget.question.correctAnwerExpHighlight,
+                                style: TextStyle(
+                                    fontSize: scrSize.width / 23,
+                                    color: Colors.black54,
+                                    fontWeight: FontWeight.w600,
+                                    decoration: TextDecoration.underline),
+                              ),
+                              TextSpan(
+                                text: widget.question.correctAnwerExp2,
+                                style: TextStyle(
+                                    fontSize: scrSize.width / 23,
+                                    color: const Color(ulgGery1),
+                                    fontWeight: FontWeight.w300),
+                              ),
+                            ]),
                           ),
-                          TextSpan(
-                            text: widget.question.correctAnwerExpHighlight,
-                            style: TextStyle(
-                                fontSize: scrSize.width / 50,
-                                color: Colors.black54,
-                                fontWeight: FontWeight.w600,
-                                decoration: TextDecoration.underline),
-                          ),
-                          TextSpan(
-                            text: widget.question.correctAnwerExp2,
-                            style: TextStyle(
-                                fontSize: scrSize.width / 50,
-                                color: const Color(ulgGery1),
-                                fontWeight: FontWeight.w300),
-                          ),
-                        ]),
+                        ),
                       )
                     ]),
               ),
             ),
             SubmitButton(
-                text: "NEXT QUESTION",
+                text: widget.question.questionNumber == 10
+                    ? "FINISH"
+                    : "NEXT QUESTION",
                 width: scrSize.width / 2,
                 onTap: () {
                   if (widget.question.questionNumber == 10) {
